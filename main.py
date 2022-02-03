@@ -1,6 +1,6 @@
 import telebot
-API_TOKEN='5213813270:AAEVa-TVw35X7SprHQ99M72eqF0TTgx35l05213813270:AAEVa-TVw35X7SprHQ99M72eqF0TTgx35l0v'
-bot=telebot.Telebot(API_TOKEN)
+
+bot = telebot.TeleBot('5213813270:AAEVa-TVw35X7SprHQ99M72eqF0TTgx35l0')
 
 ourchatid=-1001139329557
 idg = 789996181
@@ -15,3 +15,7 @@ nikr = '@r4419'
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
     bot.send_message(m.chat.id, 'Привет! Я Морошка - бот, который регулирует общение в чате!  ')
+
+if __name__ == '__main__':
+    bot.skip_pending = True
+    bot.infinity_polling()
